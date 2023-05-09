@@ -7,25 +7,17 @@ import "./index.css";
 import { RootRoute, Router, Route, RouterProvider } from "@tanstack/router";
 
 // Create a root route
-const rootRoute = new RootRoute({
+let rootRoute = new RootRoute({
   component: App,
-});
-
-// Create an index route
-const indexRoute = new Route({
-  getParentRoute: () => rootRoute,
-  path: "/",
-  component: Index,
 });
 
 // Create an about route
 const aboutRoute = new Route({
   getParentRoute: () => rootRoute,
-  path: "/about",
-  component: About,
+  path: "about",
 });
 
-const routeTree = rootRoute.addChildren([indexRoute, aboutRoute]);
+const routeTree = rootRoute.addChildren([aboutRoute]);
 
 const router = new Router({ routeTree });
 
