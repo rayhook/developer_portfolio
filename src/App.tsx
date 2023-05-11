@@ -1,6 +1,7 @@
 import { Link, Outlet } from "@tanstack/router";
 import "./App.css";
 import { useState } from "react";
+import MyIcon from "./assets/MyIcon";
 
 function App() {
   const PROJECTS = [
@@ -24,7 +25,7 @@ function App() {
   ];
 
   const [isHovered, setIsHovered] = useState(false);
-  const [projects, setProjects] = useState(PROJECTS);
+  const [projects] = useState(PROJECTS);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -39,7 +40,7 @@ function App() {
     >
       <div className="max-w-7xl h-full mx-auto">
         <div className="flex flex-col">
-          <div className="py-6 bg-slate-800 fixed top-0 left-0 right-0 bg-opacity-50 text-white">
+          <div className="py-6 bg-slate-800 sticky top-0 left-0 w-full right-0 bg-opacity-50 text-white backdrop-blur-md">
             <div className="mx-4 flex justify-between">
               <h1 className="text-2xl ml-2">Chris Movassagh</h1>
               <h1 className="text-2xl mr-2">About</h1>
@@ -53,9 +54,7 @@ function App() {
               <br /> on crafting meaningful <span>experiences</span>.
             </h1>
           </div>
-
-          {/* TODO map over array of projects instead of manually adding */}
-          <div className="flex flex-col gap-12">
+          <div className="flex flex-col gap-12 my-24">
             <h2 className="mx-4 mt-6 text-3xl text-white font-semibold">
               Some of my works
             </h2>
@@ -75,13 +74,37 @@ function App() {
               );
             })}
           </div>
-          <div className="mx-4 my-6">
+          <div className="mx-4 my-12 text-white">
             <h4 className="text-2xl">Drop me a line</h4>
-            <div className="flex justify-between contact-me mt-4">
-              <h4>Github</h4>
-              <h4>Linked</h4>
-              <h4>Email</h4>
+            <div className="mt-4 grid grid-cols-3 grid-rows-2 gap-4 uppercase hover:">
+              <div className="flex group">
+                <MyIcon className="hidden w-6 h-6 mr-4 group-hover:block" />
+                <h4>Twitter</h4>
+              </div>
+              <div className="flex group">
+                <MyIcon className="hidden w-6 h-6 mr-4 group-hover:block" />
+                <h4>Email</h4>
+              </div>
+              <div className="flex group">
+                <MyIcon className="hidden w-6 h-6 mr-4 group-hover:block" />
+                <h4>LinkedIn</h4>
+              </div>
+              <div className="flex group">
+                <MyIcon className="hidden w-6 h-6 mr-4 group-hover:block" />
+                <h4>Codepen</h4>
+              </div>
+              <div className="flex group">
+                <MyIcon className="hidden w-6 h-6 mr-4 group-hover:block" />
+                <h4>Github</h4>
+              </div>
+              <div className="flex group">
+                <MyIcon className="hidden w-6 h-6 mr-4 group-hover:block" />
+                <h4>Stack</h4>
+              </div>
             </div>
+          </div>
+          <div className="flex justify-center py-8 mt-8 bg-slate-800 text-white">
+            Take me to the good vibes
           </div>
         </div>
       </div>
