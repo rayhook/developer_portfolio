@@ -1,7 +1,7 @@
-function MyIcon({ className }) {
+function MyIcon() {
   return (
     <svg
-      className={className}
+      className="hidden w-6 h-6 mr-4 group-hover:block"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"

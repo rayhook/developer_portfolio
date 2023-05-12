@@ -1,4 +1,3 @@
-import { Link, Outlet } from "@tanstack/router";
 import "./App.css";
 import { useState } from "react";
 import MyIcon from "./assets/MyIcon";
@@ -78,18 +77,18 @@ function App() {
                 href="mailto: chris.movassagh@gmail.com"
                 className="flex group"
               >
-                <MyIcon className="hidden w-6 h-6 mr-4 group-hover:block" />
+                <MyIcon />
                 <h4>Email</h4>
               </a>
               <a href="https://github.com/rayhook" className="flex group">
-                <MyIcon className="hidden w-6 h-6 mr-4 group-hover:block" />
+                <MyIcon />
                 <h4>Github</h4>
               </a>
               <a
                 href="https://www.linkedin.com/in/chris-movassagh/"
                 className="flex group"
               >
-                <MyIcon className="hidden w-6 h-6 mr-4 group-hover:block" />
+                <MyIcon />
                 <h4>LinkedIn</h4>
               </a>
             </div>
