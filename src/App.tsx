@@ -5,22 +5,25 @@ import MyIcon from "./assets/MyIcon";
 function App() {
   const PROJECTS = [
     {
+      project_name: "Messenger App",
+      project_description:
+        "A fullstack messenger app. Allows real-time chat and ability to send mutiple photos between users",
+      project_technologies: "React, Express, Postgres, Redux",
+      deplyed_url: "https://github.com/rayhook/messenger-6877",
+    },
+    {
+      project_name: "Instaframe",
+      project_description:
+        "A clone of instagram. Features includes uploading photos,posting comments and liking",
+      project_technologies: "React, Express, MongoDB",
+      deplyed_url: "https://rayhook-insta-clone.netlify.app/",
+    },
+    {
       project_name: "Recipe Builder",
       project_description:
-        "Allows you to build a recipe oon react, add your favourite recipe and keep them organized.",
-      project_technologies: "Full, React, Postgres",
-    },
-    {
-      project_name: "Instar",
-      project_description:
-        "Similiar to instagram allows image uploading, sharing and liking photos",
-      project_technologies: "Full stack, React, Python",
-    },
-    {
-      project_name: "T3 Stack",
-      project_description:
-        "fundementally changed the frontend world and sold my business for $1bn within 1 month of coding",
-      project_technologies: "Typescript, Prisma, Next",
+        'A light and fast recipes builder app. Create recipes, find recipes by name or other filters or add recipes to your "favorite" or "want to try list"',
+      project_technologies: "React, Express",
+      deplyed_url: "https://rayhook-recipe-builder.netlify.app/",
     },
   ];
 
@@ -56,7 +59,8 @@ function App() {
             </h2>
             {projects.map((project) => {
               return (
-                <div
+                <a
+                  href={project.deplyed_url}
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                   className="peer py-14 px-8 mx-8 border text-white rounded-lg transition duration-150 hover:py-20 hover:px-12 hover:mx-4 hover:text-black hover:bg-white hover:ease-in-out hover:duration-700"
@@ -66,7 +70,7 @@ function App() {
                   </h4>
                   <p className="my-2">{project.project_description}</p>
                   <p className="uppercase">{project.project_technologies}</p>
-                </div>
+                </a>
               );
             })}
           </div>
