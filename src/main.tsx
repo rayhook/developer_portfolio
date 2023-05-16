@@ -1,23 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
-import About from "./components/About.tsx";
+import About from "./routes/About.tsx";
+
 import "./index.css";
 import { RootRoute, Router, Route, RouterProvider } from "@tanstack/router";
+import Index from "./routes/index.tsx";
 
-// Create a root route
 const rootRoute = new RootRoute({
   component: App,
 });
 
-// Create an about route
+const indexRoute = new Route({
+  getParentRoute: () => rootRoute,
+  path: "/",
+  component: Index,
+});
+
 const aboutRoute = new Route({
   getParentRoute: () => rootRoute,
   path: "about",
   component: () => <About />,
 });
 
-const routeTree = rootRoute.addChildren([aboutRoute]);
+const routeTree = rootRoute.addChildren([indexRoute, aboutRoute]);
 
 const router = new Router({ routeTree });
 
