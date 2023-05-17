@@ -5,7 +5,7 @@ import About from "./routes/About.tsx";
 
 import "./index.css";
 import { RootRoute, Router, Route, RouterProvider } from "@tanstack/router";
-import Index from "./routes/index.tsx";
+import Index from "./routes/Index.tsx";
 
 const rootRoute = new RootRoute({
   component: App,

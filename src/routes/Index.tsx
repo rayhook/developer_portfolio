@@ -26,15 +26,15 @@ function Index() {
     },
   ];
   const [projects] = useState(PROJECTS);
-  const [isHovered, setIsHovered] = useState(false);
+  // const [isHovered, setIsHovered] = useState(false);
 
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
+  // const handleMouseEnter = () => {
+  //   setIsHovered(true);
+  // };
 
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
+  // const handleMouseLeave = () => {
+  //   setIsHovered(false);
+  // };
 
   return (
     <>
@@ -56,8 +56,6 @@ function Index() {
               return (
                 <a
                   href={project.deplyed_url}
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
                   className="peer py-14 px-8 mx-8 border text-white rounded-lg transition duration-150 hover:py-20 hover:px-12 hover:mx-4 hover:text-black hover:bg-white hover:ease-in-out hover:duration-700"
                 >
                   <h4 className="font-semibold text-xl lg:text-2xl uppercase">
