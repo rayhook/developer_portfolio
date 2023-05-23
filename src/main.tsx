@@ -4,6 +4,7 @@ import { RootRoute, Router, Route, RouterProvider } from "@tanstack/router";
 import App from "./App.tsx";
 import About from "./routes/About.tsx";
 import Index from "./routes/Index.tsx";
+import Filter from "./routes/Filter.tsx";
 import "./index.css";
 
 const rootRoute = new RootRoute({
@@ -22,7 +23,13 @@ const aboutRoute = new Route({
   component: About,
 });
 
-const routeTree = rootRoute.addChildren([indexRoute, aboutRoute]);
+const filterRoute = new Route({
+  getParentRoute: () => rootRoute,
+  path: "filter",
+  component: Filter,
+});
+
+const routeTree = rootRoute.addChildren([indexRoute, aboutRoute, filterRoute]);
 
 const router = new Router({ routeTree });
 

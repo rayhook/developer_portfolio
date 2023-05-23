@@ -8,8 +8,11 @@ function App() {
         <Link to="/">
           <h1 className="text-2xl">Chris Movassagh</h1>
         </Link>
-        <Link to="/about" className="hover:text-green-600">
+        <Link to="/about">
           <h1 className="text-2xl">About</h1>
+        </Link>
+        <Link to="/filter">
+          <h1 className="text-2xl">Filter</h1>
         </Link>
       </div>
       <Outlet />
