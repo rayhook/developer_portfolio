@@ -4,25 +4,38 @@ import nobelprizes from "../data/nobel.json";
 function Filter() {
   const [nobel, setNobel] = useState(nobelprizes);
   return (
-    <div className="min-h-screen h-screen">
-      {nobel?.nobelPrizes?.map((winner, index) => {
-        return (
-          <div className="">
-            <table key={index}>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>{winner["laureates"]?.[0]?.["fullName"]?.["en"]}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        );
-      })}
+    <div className="flex flex-col w-full max-w-md">
+      <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div className="">
+          <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8 bg-yellow-500"></div>
+          <table className="min-w-full divide-y divide-gray-200">
+            <thead>
+              <tr>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Name
+                </th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Year
+                </th>
+              </tr>
+            </thead>
+            <tbody className="bg-amber-500 divide-y divide-gray-200">
+              {nobel?.nobelPrizes?.map((winner, index) => {
+                return (
+                  <tr key={index}>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      {winner["laureates"]?.[0]?.["fullName"]?.["en"]}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      {winner["awardYear"]}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 }
